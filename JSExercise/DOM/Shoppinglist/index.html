@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Shopping List</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <h2>Shopping List</h2>
+
+  <input type="text" id="item-name-input" placeholder="Item Name" />
+  <input type="number" id="item-price-input" placeholder="Item Price" min="0" />
+  <button onclick="addItem()">Add</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th data-ns-test="item-name">Item Name</th>
+        <th data-ns-test="item-price">Item Price</th>
+      </tr>
+    </thead>
+    <tbody id="item-list">
+      <!-- Items will be added here -->
+    </tbody>
+    <tfoot>
+      <tr>
+        <td class="total">Grand Total</td>
+        <td class="total" data-ns-test="grandTotal">0</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script src="./list.js">
+   
+  </script>
+
+</body>
+</html>

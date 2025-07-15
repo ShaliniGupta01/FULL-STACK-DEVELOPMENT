@@ -1,0 +1,161 @@
+<!-- Tailwind CSS Utility  first framework -->
+
+<!-- The creater of Tailwind CSS is Adam Wathan  , Bootstrap and these foundation-->
+
+<!-- Its flexiblable  building , Full costmize, flex, on class to compile to .flex{display:flex;}-->
+
+<!-- Utility  First
+ Fresh Design Look
+ Easier to write(you write actual css don't copy that) single page , jss page
+ Performant (with PurgeCss) it's tiny -never ship unused CSS again    (By developer) -->
+
+<!-- Mobile first => build for mobile size , Wrestling with a bunch of complex media queries in your Css sucks, so tailwind lets you build response designs right in your HTML instead.
+  Throw a screen size in front of literally any utility class and wach it magicallly apply at a specific breakpoint -->
+
+<!-- HTML layout  => <div> </div>
+  position => flex , justify -center, item-center
+  spacing => padding, margin, box-shadow (common in any lang)
+   -->
+<!-- devvv.com => ... => index.html, css , js  => SEO , perform, customize-->
+
+<!-- Using the Play CDN for Tailwind CSS is convenient for quick prototyping, but it's not recommended for production because it loads a large file and can slow down your site. For production, use a build process to generate only the CSS you need. , Performance down-->
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+<!-- Introduction to Tailwind CSS
+Tailwind is a utility-first framework designed to speed up the design process by completely removing the need for CSS. In the past, every HTML element would get a single class and that class would contain a lot of custom CSS in a separate CSS file. Though this is still the general practice, this practice leads to huge CSS files, reduces the ease of maintaining CSS and yields overall poorer developer experience. 
+
+Another advantage of a utility framework is its superior performance with caching due to not busting the cache for small CSS changes. Tailwind has been designed with incredible sensible defaults to make your designs look and feel "polished" and "designed" through the careful use of color palettes, color shades, sizing consistency and modern web best-practices. It's also worth noting, that Tailwind is mobile-first and has an easy naming convention with responsive designs built-in.
+
+Tailwind's robust customization system will allow you to customize/tweak/modify everything in the framework through the use of the tailwind.config.js file. The customizations of Tailwind are beyond the scope of this course but rest assured that the default Tailwind classes are almost always exactly what you will need.
+
+ 
+
+Advantages of Tailwind CSS
+No need for huge CSS les with custom CSS.
+
+Easy to make design changes right from the view files.
+
+Better developer experience.
+
+Mobile-first designs from the start.
+
+Designed with defaults for a polished and designed look and feel.
+
+Easily customizable with the config files.
+
+
+
+How to use Tailwind CSS?
+Using CDN Link:
+
+Using Tailwind CSS via CDN link allows you to quickly include Tailwind CSS in your HTML file without the need for any installation or setup. Simply add the Tailwind CSS CDN link to the <head> section of your HTML file, and you can start using Tailwind CSS utility classes immediately.
+
+CDN link:
+
+<script src="https://cdn.tailwindcss.com"></script>
+ Using Package Manager:
+
+To use Tailwind CSS in your HTML project via a package manager like npm, you need to install Tailwind CSS as a dependency. After installation, you can include Tailwind CSS in your HTML file using a <link> tag. This approach allows for customization of Tailwind CSS configuration and tree shaking to optimize the final CSS bundle size.
+
+Step 1: Initialize a new HTML project or navigate to your existing project directory.
+
+mkdir my-tailwind-project
+cd my-tailwind-project
+Step 2: Initialize a new npm project (if you haven't already):
+
+npm init -y
+Step 3: Install Tailwind CSS and its dependencies:
+
+npm install tailwindcss postcss-cli autoprefixer
+Step 4: Create a tailwind.config.js file to customize Tailwind (optional):
+
+npx tailwindcss init
+Step 5: Create a postcss.config.js file to process your CSS with Tailwind:
+
+// postcss.config.js
+
+module.exports = {
+  plugins: [
+    require('tailwindcss'),
+    require('autoprefixer'),
+  ]
+}
+
+
+1. Background classes & shades 
+This set of classes change the background color of an element using a scale of 100-900 for shades and a palette of over 90 shades.
+
+Example: 
+
+2. Element sizing is achieved using the w- and h- classes. 
+All of the numbers in Tailwind are based around the rem unit of measurement. 1 rem is equal to the size of the base font of the document. As an example, if the base font size is 16px then 1 rem is equal to 16px and we can deduce that 1.25 rem is equal to 20px . To help with these fractional numbers, Tailwind's numbered classes are multiplied by 4 to avoid having numbers with decimal places. 
+
+Tailwind's Numbering System 
+Assuming the base fontsize of the document is 16px
+Continues to all of the available default sizes 12, 16, 20, 24, 32, 40, 48, 56, 64,
+Sizing with w-* and h-* classes
+
+
+Example: Write all shades of blue using Tailwind
+
+
+
+3. Padding and margins with p-* , m-* , py-* and my-*
+These classes add padding and margin to an element using the Tailwind numbering system.
+
+
+4. Styling Text with utility classes 
+Font styling is a huge part of any design and Tailwind has plenty of classes that we can use to style the text on our apps. It even includes utility classes for transformations like uppercase. 
+
+
+
+
+
+
+
+Example: 
+.
+5. Borders 
+These classes will color, stylize and add radius to any border or corners.
+
+
+
+6. Display Modes 
+Most items are display block by default but that can easily be changed with the available display classes
+
+
+7. Flexbox
+Tailwind uses Flexbox for the layout of items on the document. Flexbox is a css display property that denes a ex container. Once a container has been assigned as a ex container, we can use all of the alignment utility classes to achieve the desired look. 
+
+
+
+Example:
+
+
+8. Responsive Design
+All modern applications should be able to responsively t into the screen size. Tailwind is a mobile-first framework, meaning that all of the classes that we have talked about thus far, are for mobile and trickle up to desktop. But we can change this with a couple of modifiers.
+
+
+
+
+9. Hover Modifier 
+We can tap into the built-in hover state in CSS using the hover: modifier along with any of the default classes to achieve interactive designs.
+
+ 
+
+10. Focus Modifier 
+Adding a focus state is simple using the focus: modifier along with any of the default classes provided by Tailwind CSS.
+
+ 
+
+11. Combination Modifiers 
+Sometimes, the design may require 2 modifiers at the same time. For example, you may need to change the hover state for a background color but only in md: size. Let's explore how to achieve this.
+
+ 
+
+12. Other Utilities 
+There are some other useful utilities that you should know about.
+ -->
+
+
+  <!-- Tailwind CSS:Enhancing Reusability and Reducing the Need for Custom CSS -->

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #chat::before{
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: green;
+        border:none;
+        border-radius: 50px;
+    }
+
+    p::after{
+        content: 'New message';
+        background-color: blueviolet;
+        color: black;
+        opacity: 0.5;
+        border: none;
+        border-radius: 50px;
+        margin-left: 9px ;
+        padding: 2px;
+
+    }
+
+    #newcss::first-line{
+        background-color: turquoise;
+        color: red;
+    }
+</style>
+<body>
+  <!--  <p>Active</p> -->
+    <p id="chat">Lorem </p>
+    <p id="newcss">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis deserunt cum maxime doloremque dignissimos repudiandae quaerat ipsa laudantium? Numquam eligendi blanditiis at, qui deserunt unde! Cum harum aperiam dignissimos velit!</p>
+</body>
+</html>

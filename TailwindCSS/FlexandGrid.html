@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css">
+    <style>
+        .btn {
+            @apply bg-blue-500 text-white py-2 px-4 hover:bg-gray-500 rounded
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- https://tailwindcss.com/docs/installation/using-vite -->
+
+    <!-- <div class="flex  flex-wrap gap-2 bg-gray-950 p-4">-->
+    <!-- Flex and Shrink , Grow, wrap-->
+    <!-- <div class="basis-1/2  hover:grow rounded-lg bg-green-500 p-4 text-center font-bold">01</div>
+        <div class="basis-1/2  shrink rounded-lg bg-red-500 p-4 text-center font-bold">02</div>
+        <div class="basis-1/2 flex-wrap rounded-lg bg-blue-500 p-4 text-center font-bold">03</div> -->
+
+    <!-- Grid -->
+    <!-- <div class="grid grid-cols-5 gap-2 rounded-lg bg-red-400 p-4">
+            <div class="rounded-md bg-green-500 p-2 text-center font-bold text-black">01</div>
+            <div class="rounded-md bg-red-500 p-2 text-center font-bold text-black">02</div>
+            <div class="rounded-md bg-blue-500 p-2 text-center font-bold text-black">03</div>
+            <div class="text-centergrid col-span-2 grid-cols-subgrid rounded-md bg-pink-500 p-2 font-bold text-black">
+                <p class="col-end-2">04</p>
+            </div>
+            <div class="rounded-md bg-violet-500 p-2 text-center font-bold text-black">05</div>
+            <div class="rounded-md bg-orange-500 p-2 text-center font-bold text-black">06</div>
+            <div class="rounded-md bg-sky-500 p-2 text-center font-bold text-black">07</div>
+            <div class="rounded-md bg-yellow-500 p-2 text-center font-bold text-black">08</div>
+        </div>
+    </div>  -->
+
+    <!-- <div class="flex h-screen flex-row  justify-between gap-2 bg-gray-950 p-4">-->
+    <!-- Flex , justify  -->
+    <!-- <div class="h-20 w-64 rounded-lg bg-green-500 p-4 text-center font-bold">01</div>
+        <div class="h-20 w-64 rounded-lg bg-green-500 p-4 text-center font-bold">02</div>
+    </div>  -->
+
+    <!-- Responsive classes in tailwind -->
+
+    <div class="min-h-screen bg-gray-950 p-4 text-white/80">
+        <!-- Responsive classes in tailwind -->
+        <!-- responsive design -->
+        <div class="space-y-8 p-4 text-center">
+            <!-- sm!  After 640px of width   Mobile-->
+            <!-- md! 768px and above    tablet(ipad)-->
+            <!-- lg! 1024px and above    Laptop -->
+            <div>
+                <!-- <button
+                    class="sm:bg-green-500 md:bg-blue-300 lg:bg-pink-400 xl:bg-yellow-100 rounded-lg bg-amber-500 px-4 py-2">Responsive
+                    Button</button> -->
+            </div>
+
+            <div>
+                <!-- Below  <-md -->
+                <!-- <button class="max-sm:bg-pink-500 rounded-md bg-red-500 p-4">Max Button</button> -->
+            </div>
+
+            <div>
+                <!-- single breakpoint-->
+                <!-- <button class="md:max-lg:bg-yellow-200 md:max-lg:flex rounded-md bg-red-500 p-4">Button</button> -->
+            </div>
+
+            <div>
+                <!-- breakpoint-->
+                <!-- <button class="min-[450px]::bg-pink-500 rounded-md bg-red-500 px-4 py-2 laptop:bg-sky-500">Next
+                    Button</button>
+            </div> -->
+            </div>
+            <!-- Mobile first -> Bigger Screens -->
+        </div>
+
+        <!-- Customizations in tailwind-->
+        <!-- <div class="bg-red xs:bg-customBlue p-33 text-center font-roboto text-3xl text-white/80">
+        <p>Hello people</p>
+    </div> -->
+
+        <div class="p-33 bg-green-500 text-3xl text-white/80">
+            <p>Hello people</p>
+        </div>
+
+        <button class="btn">CLick me</button>
+
+</body>
+
+</html>

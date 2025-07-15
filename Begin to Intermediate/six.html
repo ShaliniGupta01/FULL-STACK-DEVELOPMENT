@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a[href^="http"]{
+            background-color: blue;
+        }
+
+        input[type="email"]{
+            background-color: tomato;
+            color: red;
+        }
+        /* CSS nested */
+        .container{
+            container-type: inline-size;
+            background-color: magenta;
+            padding: 20px;
+        }
+
+        .card{
+            background-color: white;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        &h2{
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        & p{
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        @container (min-width: 600px) {
+           & { 
+                padding: 24px;
+            }
+        }
+
+        & h2 {
+            font-size: 2rem;
+        }
+
+        & p{
+            font-size: 1.125rem;
+        }
+
+        /*CSS fonts*/
+
+      /*  p{
+          font-size: x-large; 
+          font-style: italic;
+          font-weight: bolder;
+          text-transform: capitalize;
+          font-family: monospace;
+        }*/
+
+        /* CSS units */
+
+        div{
+            font-size: 10vw;
+
+        }
+
+        /* CSS relative units 
+
+        body{
+            font-size: 50px;
+        }
+        #r1{
+            font-size: 1rem;
+        }
+        #r2{
+            font-size: 2rem;
+        }
+        #e1{
+            font-size: 1em;
+        }
+        #e2{
+            font-size: 2em;
+        } */
+        /*CSS color */
+        #r1{
+            color: rgba(255, 0, 64, 0.643);
+        }
+        #e1{
+            color: #0000ff;
+        }
+        #r2{
+            color: rgb(0, 255, 64);
+        }
+        #e2{
+            color: rgb(0, 113, 128);
+        }
+
+        /* css table */
+        table{
+            margin: 100px;
+            width: 500px;
+           
+        }
+
+        table, tr, th, td{
+             border: 1px solid black;
+             border-collapse: collapse;
+             text-align: left;
+             padding: 2px;
+        }
+
+        th{
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+
+        td{
+            background-color: lightgreen;
+            color: rgb(255, 0, 0);
+            font-weight: bolder;
+        }
+
+        td:hover{
+            background-color: rgb(255, 119, 0);
+            color: blanchedalmond;
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="">Internal 1</a>
+    <a href="https://www.youtube.com/">youtube</a>
+    <a href="">Internal 2</a>
+    <a href="https://www.google.com/">google</a>
+    <a href="">Internal 3</a>
+    <br>
+    <br>
+    <br>
+    <input type="text">
+    <input type="email">
+    <input type="phone">
+    <input type="password">
+
+    <br>
+    <br>
+
+    <!--<div class="container">
+        <div class="card">
+            <h2>Title</h2>
+            <p>Description goes here.</p>
+        </div>
+    </div> -->
+
+    <br>
+    <br>
+
+    <p>This is some random text.</p>
+
+    <br>
+    <div>First</div>
+    <p id="r1">Here is text</p>
+    <p id="e1">Here is text</p>
+    <p id="r2">Here is text</p>
+    <p id="e2">Here is text</p>
+
+    <br>
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+       
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+       
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+       
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>Table-Header 1</th>
+            <th>Table-Header 2</th>
+        </tr>
+        <tr>
+            <td>Cell 1</td>
+            <td>Cell 2</td>
+        </tr>
+        <tr>
+            <td>Cell 4</td>
+            <td>Cell 5</td>
+        </tr>
+         <tr>
+            <td>Cell 7</td>
+            <td>Cell 8</td>
+        </tr>
+        <tr>
+            <td>Cell 9</td>
+            <td>Cell 10</td>
+        </tr>
+    
+    </table>
+
+</body>
+</html>

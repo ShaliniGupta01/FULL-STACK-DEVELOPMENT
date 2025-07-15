@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Advanced CSS</title>
+
+    <style>
+
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            margin: 100px;
+            color: white;
+           /* transition: width 2s  linear 1s, height 2s linear 1s;
+            transition-timing-function: ease-in ;
+            transition-delay: 2s;*/
+            transition: transform 2s linear 1s;
+            
+        }
+
+        .box:hover {
+            width: 300px;
+            height: 300px;
+            transform: rotate(30deg);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+        Some text
+    </div>
+    
+</body>
+
+</html>

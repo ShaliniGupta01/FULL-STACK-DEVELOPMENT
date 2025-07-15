@@ -1,0 +1,36 @@
+/* Event Bubbling */
+/* html {
+    background-color: lightgreen;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 600px;
+    flex-direction: column;
+    background-color: #f0f0f0;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    flex-direction: column;
+    background-color: lightblue;
+
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    flex-direction:column;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} */

@@ -1,0 +1,322 @@
+<!-- Javascript -->
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript -->
+
+<!-- https://learn.cuvette.tech/courses/take/new-course-2/texts/60596784-understanding-javascript-engines-v8-and-spidermonkey -->
+
+<!-- https://www.geeksforgeeks.org/javascript/introduction-to-javascript-engines/ -->
+
+<!-- https://developer.mozilla.org/en-US/docs/Glossary/Engine/JavaScript -->
+
+<!-- JavaScript engines are software components responsible for executing JavaScript code. They power modern web browsers and other environments like Node.js. Popular engines include V8 (used by Google Chrome and Node.js) and SpiderMonkey (used by Mozilla Firefox).
+
+This document provides a detailed overview of how JavaScript engines work, focusing on their architecture, key concepts, and the role of Just-In-Time (JIT) compilation.
+
+
+
+What is a JavaScript Engine?
+A JavaScript engine is a program or interpreter that reads, parses, and executes JavaScript code. It converts human-readable JavaScript into machine-readable instructions that computers can execute.
+
+Key goals of JavaScript engines:
+
+Performance: Execute JavaScript quickly and efficiently.
+Memory Management: Handle dynamic memory allocation and garbage collection.
+Cross-Platform Support: Ensure compatibility with web standards.
+Some JavaScript Engines:
+V8 Engine
+
+Developed by: Google
+Used in: Google Chrome, Node.js, Microsoft Edge (Chromium-based)
+Features: High-performance execution, Just-In-Time (JIT) compilation, efficient garbage collection.
+SpiderMonkey Engine
+
+Developed by: Mozilla
+Used in: Mozilla Firefox
+Features: First JavaScript engine (introduced in 1995), implements modern standards like ES6+, and supports advanced debugging tools.
+
+How JavaScript Engines Work
+1. Parsing
+JavaScript engines start by parsing the code into a format they can understand:
+
+Lexical Analysis (Tokenization): Breaks code into meaningful chunks called tokens.
+Syntax Analysis (Parsing): Converts tokens into an Abstract Syntax Tree (AST), which represents the structure of the code.
+Example:
+JavaScript code:
+
+const x = 10 + 20;
+Tokenized Output:
+
+const
+x
+=
+10
++
+20
+
+2. Compilation
+Modern JavaScript engines use Just-In-Time (JIT) compilation to execute code quickly.
+
+Steps:
+Interpreter: Quickly executes code line by line during the initial run.
+Profiler: Monitors frequently executed parts of the code (hot code).
+JIT Compiler: Converts hot code into optimized machine code.
+By combining interpretation and compilation, JIT minimizes execution time while ensuring performance.
+
+
+3. Execution
+The optimized machine code is executed directly by the CPU. During execution:
+
+The engine manages memory allocation and garbage collection.
+Optimizations may be re-evaluated (e.g., deoptimization occurs if assumptions about the code's behavior change).
+
+Features of V8 and SpiderMonkey:
+V8 Engine (Google Chrome, Node.js)
+Architecture:
+Ignition: V8’s interpreter that quickly executes bytecode during the initial run.
+TurboFan: V8’s optimizing JIT compiler that generates highly efficient machine code for hot paths.
+Performance Enhancements:
+Inline caching for frequently called functions.
+Hidden classes for optimizing property access.
+Efficient garbage collection with the Orinoco garbage collector.
+Example in Node.js:
+console.log("Hello from V8!");
+
+SpiderMonkey Engine (Mozilla Firefox)
+Architecture:
+Interpreter (Baseline): Quickly executes JavaScript.
+IonMonkey: Optimizing JIT compiler for performance-critical code.
+Warp: A faster and simpler JIT compiler introduced in recent versions.
+Performance Enhancements:
+Advanced memory management.
+Debugger-friendly tools.
+Supports WASM (WebAssembly) for high-performance use cases.
+Example in Firefox:
+console.log("Hello from SpiderMonkey!");
+
+Just-In-Time (JIT) Compilation
+What is JIT Compilation?
+JIT compilation combines the best aspects of interpretation and traditional compilation:
+
+Interpretation: Starts executing code quickly without waiting for full compilation.
+Compilation: Optimizes code during execution for better performance.
+Advantages:
+Faster initial execution compared to traditional compilation.
+Continuous performance improvement by optimizing hot code.
+Adaptive to changing execution patterns.
+JIT Workflow:
+Parse JavaScript code.
+Execute code via interpreter.
+Identify frequently executed parts of the code (hot paths).
+Compile hot paths into machine code for optimized performance.
+Deoptimize machine code if assumptions (e.g., variable types) change.-->
+
+<!-- variable -->
+<!-- https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Variables -->
+
+<!-- https://www.w3schools.com/js/js_variables.asp -->
+
+<!-- Var Let Const -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let -->
+
+<!-- Scopes -->
+<!-- https://developer.mozilla.org/en-US/docs/Glossary/Scope -->
+
+<!-- DataTypes -->
+<!-- https://www.w3schools.com/js/js_datatypes.asp  -->
+
+<!-- operators -->
+<!-- https://www.w3schools.com/js/js_operators.asp -->
+
+<!-- conditional statement -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator -->
+
+<!-- Arrays -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array -->
+
+
+<!-- print the result in body(document)
+ document.write("Hello World!");
+
+ we want to show and say Hello World alert will generate a pop-up (used alert)
+ alert("Hello World") -->
+
+<!-- print the result in console , to view our result of js
+        console.log( "Hello World!" );
+
+        console.log("Hello Again!");
+
+        console.log(654) -->
+
+<!-- Objects -->
+<!--https://www.w3schools.com/js/js_objects.asp  -->
+
+<!-- Functions -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions -->
+
+<!-- Paradigms -->
+<!--https://javascript.plainenglish.io/what-are-javascript-programming-paradigms-3ef0f576dfdb  -->
+
+<!-- OOPS -->
+<!-- https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming -->
+<!-- https://www.geeksforgeeks.org/javascript/introduction-object-oriented-programming-javascript/ -->
+<!-- https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming -->
+<!-- 1. Object Oriented Programming
+
+Object-Oriented Programming (OOP) is a paradigm based on the concept of objects. Objects encapsulate data and behavior and serve as reusable and modular units of code. In JavaScript, OOP is implemented using prototypical inheritance and class syntax. This guide will cover the fundamentals of OOP in JavaScript, including types, classes, objects, and examples.
+
+It focuses on:
+
+Encapsulation: Bundling data (properties) and behavior (methods) into objects.
+Inheritance: Reusing code by inheriting properties and methods from other objects or classes.
+Polymorphism: Overriding methods to perform different tasks.
+Abstraction: Hiding implementation details and exposing only essential features.
+
+2. Core Concepts of OOP in JavaScript
+2.1 Objects
+Objects are the building blocks of OOP. They contain properties and methods.
+
+Creating Objects
+
+Using a Constructor Function
+
+
+2.2 Inheritance
+Inheritance allows one object or class to acquire the properties and methods of another. In JavaScript, this can be achieved through prototypical inheritance or class-based inheritance.
+
+Why Use Inheritance?
+Reuse existing code to avoid duplication.
+Create specialized child objects or classes that extend the behavior of parent ones.
+2.3 Prototypical Inheritance
+In JavaScript, every object has an internal property [[Prototype]], accessible through __proto__ or Object.getPrototypeOf. Objects inherit properties and methods from their prototype.
+
+Example Using Object.create()
+
+Explanation:
+->Object.create() creates a new object (dog) with the specified prototype object (animal).
+
+->This approach is useful for setting up inheritance when you need to create objects that share functionality from a common prototype without using class syntax.
+
+->The 'dog' object inherits the 'speak' method from 'animal'. // Creates an object with 'animal' as its prototype
+
+Example Using __proto__
+
+Explanation:
+  ->The __proto__ property directly sets the prototype of the dog object to the animal object.
+
+  ->This allows the dog object to inherit the speak method from animal.
+
+  ->While __proto__ is not recommended for modern usage, it is helpful for understanding how prototypes work.
+
+ ->Sets the prototype explicitly.
+
+Prototype Chain
+When accessing a property or method, JavaScript searches through the prototype chain until it finds it or reaches the end of the chain.
+
+Example
+
+
+2.4 Classical Inheritance
+Although JavaScript does not have classical inheritance like other OOP languages, the class syntax simulates it by leveraging prototypes under the hood.
+
+Class Syntax
+The class syntax provides a cleaner and more intuitive way to create objects and handle inheritance compared to manual prototype manipulation.
+
+
+Relationship Between Class Syntax and Prototypical Inheritance
+JavaScript classes are syntactic sugar over the existing prototypical inheritance mechanism. They internally use prototypes to establish inheritance.
+
+The class keyword defines a constructor function and a prototype object.
+The extends keyword sets up the prototype chain for inheritance.
+The super keyword allows calling the parent class's constructor or methods.
+Example of Prototype Relationship
+
+This shows how class syntax relies on prototype chains to enable inheritance.
+
+
+2.5 Encapsulation
+Encapsulation ensures that an object's internal state is protected and can only be accessed or modified through defined methods.
+
+Example
+
+
+2.6 Polymorphism
+Polymorphism allows objects or classes to define methods that behave differently depending on the context.
+
+Example
+
+
+2.7 Abstraction
+Abstraction hides complex implementation details and exposes only the necessary features.
+
+Example
+
+ -->
+
+
+<!-- Other common API in javascript -->
+
+<!-- JavaScript provides several powerful APIs that extend its functionality and enable developers to create richer and more interactive web applications. These APIs are part of the browser environment and allow JavaScript to interact with various system features such as file handling, clipboard management, and running tasks in the background.
+
+This documentation explores some of the commonly used APIs that enhance JavaScript's capabilities:
+
+Clipboard API
+File API
+Web Workers API
+Clipboard API
+The Clipboard API allows web applications to interact with the user's clipboard (cut, copy, and paste operations). It provides more control over clipboard actions compared to the traditional document.execCommand() method and enables programmatic access to copy and paste operations.
+
+Features:
+Supports copying and pasting text and images.
+Offers a more secure and modern alternative to document.execCommand().
+Allows access to clipboard content using JavaScript (with user permission).
+Use Cases
+Copying text to clipboard: Custom copy-to-clipboard buttons.
+Clipboard management: Implementing features like copying code snippets, URLs, or other content. -->
+
+<!-- Security Considerations
+Clipboard operations require user interaction (e.g., clicking a button) due to security and privacy concerns.
+Access to the clipboard might be restricted in some browsers, especially when not triggered by a user action.
+
+File API
+The File API provides the ability to read and manipulate files on the client-side. It enables web applications to interact with files selected by the user, such as images, documents, and more. This API is essential for handling file uploads, allowing the application to preview, read, and validate files before they are sent to a server.
+
+Features:
+Allows reading file metadata (e.g., name, size, type).
+Can read file contents using FileReader, Blob, and File objects.
+Supports drag-and-drop file uploads and file selection via <input type="file">.
+Use Cases
+File upload functionality: Handle user uploads of images, documents, or other files.
+File preview: Display a preview of selected images or other files before uploading them.
+File validation: Ensure uploaded files meet the required formats and sizes. -->
+
+<!-- Security Considerations
+The File API allows reading files from the user's local machine, but access is restricted to files selected by the user through an <input> element or drag-and-drop.
+Files should not be stored or transmitted without proper validation to ensure that the content is safe (e.g., checking for malicious scripts in uploaded files).
+
+Web Workers API
+The Web Workers API enables JavaScript to run scripts in the background, in separate threads, without blocking the main UI thread. This allows long-running tasks (e.g., data processing, heavy computations) to be executed without freezing or slowing down the user interface.
+
+Features:
+Offloads computations to background threads.
+Can be used to run tasks asynchronously while keeping the UI responsive.
+Supports communication between the main thread and workers using messages.
+Web workers run in a separate global context, so they don’t have access to the DOM or the window object.
+Use Cases
+Complex data processing: Run large calculations without blocking the UI.
+Background tasks: Perform background tasks like data fetching, video processing, or machine learning model inference.
+Multithreading: Take advantage of multi-core processors to speed up computations. -->
+
+<!-- Terminating worker -->
+<!-- Security Considerations
+Web Workers run in a separate global context and cannot access the DOM, window object, or most web APIs. This is a security feature to isolate the worker from the main thread.
+Web Workers do not have access to certain browser features (e.g., localStorage), but they can communicate with the main thread via the postMessage() API. -->
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API -->
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/API/File_API -->
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API -->
+
+<!-- Advanced JS -->
+ <!-- Hoisting -->
+  <!--https://www.w3schools.com/js/js_hoisting.asp  -->

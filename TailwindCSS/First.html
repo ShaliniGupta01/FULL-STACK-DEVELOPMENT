@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="./output.css">
+
+
+</head>
+<!-- <style>
+    * {
+        border: 1px solid yellow;
+
+    }
+</style> -->
+
+<!-- <body class="bg-gray-900 text-white/90 "> -->
+<!-- Spacing -->
+<!-- <div>
+        <h1 class="my-2 p-2">Spacing</h1>
+
+        <p class="my-2 p-2">Here we are learning about margin and padding</p>
+        <button class=" mx-2 my-2  bg-blue-500 px-4 py-2">Click me !</button>
+        <button  class="mx-2 my-2 bg-green-500  px-4 py-2">Share</button>
+
+    </div>
+    <div class=" h-48 min-w-48 bg-slate-700">
+        <h1 class="size-48 bg-slate-400">Shalini</h1>
+    </div> -->
+
+<!-- Box Properties -->
+<!-- <div class="h-screen p-6 bg-blue-950 text-white/70"> -->
+<div class="h-[3000px]">
+    <!-- big Fixed -->
+    <!-- <div class="h-48 w-full bg-fixed"
+        style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbs4-LU1ZRNhJ_KSmEE8ec9pI-iHJc2y0vibfsatMif68Lhj-HhQftty7s_Y-_x86Ns_I');">
+    </div>
+    <h1 class="pt-64 text-center text-4xl text-red-600">bg-attachment:fixed</h1> -->
+
+    <!-- bg-local -->
+    <!-- 
+    <div class="h-48 w-full bg-local"
+        style="background-image:url('https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&h=666&q=80');">
+    </div>
+    <h1 class="pt-64 text-center text-4xl text-red-600">bg-attachment:local</h1> -->
+
+    <!-- bg-scroll -->
+
+    <!-- <div class="h-48 w-full"
+        style="background-image:url('https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&h=666&q=80');">
+    </div>
+    <h1 class="pt-64 text-center text-4xl text-red-600">bg-attachment:scroll</h1>
+</div> -->
+
+    <div class="h-screen bg-gray-900 p-2">
+        <!-- bg clip border -->
+        <div class="border-2 border-dashed border-pink-200 bg-pink-600 bg-clip-border p-12">
+            <h1 class="text-center text-xl text-white/80">Box-sizing : Border Box</h1>
+        </div>
+        <div class="my-8"></div>
+        <div class="border-2 border-dashed border-pink-200 bg-pink-600 bg-clip-padding p-12">
+            <h1 class="text-center text-xl text-white/80">Box-sizing : Padding Box</h1>
+        </div>
+        <div class="my-8"></div>
+        <div class="border-2 border-dashed border-pink-200 bg-pink-600 bg-clip-content p-12">
+            <h1 class="text-center text-xl text-white/80">Box-sizing : Content Box</h1>
+        </div>
+
+        <div class="my-8"></div>
+        <div class="text-center text-6xl font-extrabold">
+            <span class="bg-clip-text text-transparent"
+                style="background-image : url('https://static.vecteezy.com/system/resources/previews/027/614/799/large_2x/the-texture-of-the-crumpled-paper-is-light-brown-abstract-paper-background-a-copy-of-the-space-layout-blank-template-photo.jpg')">
+                Hello Tailwind</span>
+        </div>
+    </div>
+
+    <div class="h-screen bg-slate-900 p-2">
+        <!-- bg clip border -->
+        <div class="border-2 border-dashed border-green-500 bg-origin-border p-12"
+            style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwYEcaCTcF9vEWYk5dkjPwO6Lp1MKnvel3Sy83pcjBhe82vAwp83gN6yO6kDOXPWOvaYw'); background-position: center -1200px">
+            <h1 class="text-center text-xl text-pink-500/80">Box-sizing : Border Box</h1>
+        </div>
+        <div class="my-8"></div>
+        <div class="border-2 border-dashed border-red-500 bg-origin-padding p-12"
+            style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwYEcaCTcF9vEWYk5dkjPwO6Lp1MKnvel3Sy83pcjBhe82vAwp83gN6yO6kDOXPWOvaYw');background-position: center -1200px">
+            <h1 class="text-center text-xl text-sky-500">Box-sizing : Padding Box</h1>
+        </div>
+        <div class="my-8"></div>
+        <div class="border-2 border-dashed border-yellow-500 bg-origin-content p-12"
+            style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwYEcaCTcF9vEWYk5dkjPwO6Lp1MKnvel3Sy83pcjBhe82vAwp83gN6yO6kDOXPWOvaYw');background-position: center -1200px">
+            <h1 class="text-center text-xl text-red-400">Box-sizing : Content Box</h1>
+        </div>
+
+        <div class="my-8"></div>
+        <div class="text-center text-6xl font-extrabold">
+            <span class="bg-clip-text text-transparent"
+                style="background-image : url('https://static.vecteezy.com/system/resources/previews/027/614/799/large_2x/the-texture-of-the-crumpled-paper-is-light-brown-abstract-paper-background-a-copy-of-the-space-layout-blank-template-photo.jpg')">
+                Hello Tailwind</span>
+        </div>
+        <div class="my-8"></div>
+        <!-- bg-position -->
+
+        <div class="size-48 bg-green-500 bg-left-top"
+            style="background-image: url('https://i.dailymail.co.uk/i/pix/2014/03/06/article-2574667-1C14D7F100000578-759_964x919.jpg')">
+        </div>
+
+
+        <!-- bg-repeat  , bg-repeat-x and y, bg-repeat-round, bg-contain -->
+
+        <div class="my-8"></div>
+        <div class="border-2 border-dashed border-yellow-500 bg-repeat p-16"
+            style="background-image:url('https://i.dailymail.co.uk/i/pix/2014/03/06/article-2574667-1C14D7F100000578-759_964x919.jpg');background-position: center -1200px">
+        </div>
+
+        <div class="border-2 border-dashed border-yellow-500 p-16 bg-repeat"
+            style="background-image:url('https://i.dailymail.co.uk/i/pix/2014/03/06/article-2574667-1C14D7F100000578-759_964x919.jpg');background-position: center -1200px">
+        </div>
+
+        <!-- bg-cover -->
+
+
+        <div class="my-8"></div>
+        <div class="border-2 border-dashed border-yellow-500 p-16 bg-cover"
+            style="background-image:url('https://i.dailymail.co.uk/i/pix/2014/03/06/article-2574667-1C14D7F100000578-759_964x919.jpg');background-position: center -1200px">
+        </div>
+
+        <!-- bg-image -->
+
+        <div class="border-2 border-dashed border-green-500 bg-contain p-16 bg-gradient-to-r"></div>
+
+        <!-- bg-gradient -->
+
+        <div
+            class="border-2 border-dashed border-yellow-500 p-16 bg-contain bg-gradient-to-r  from-pink-400 to-yellow-400">
+        </div>
+
+
+        <div class="my-8"></div>
+        <div
+            class="border-2 border-dashed border-yellow-500 p-16 bg-cover bg-gradient-to-r from-sky-500 via-sky-500 to-indigo-500">
+        </div>
+
+        <div class="h-screen divide-y-2  space.y-8 divide-dashed divide-pink-500 bg-slate-900 p-2">
+            <!-- border-->
+            <!-- <div
+                class="size-48 divide-y  divide-yellow-400  outline-dotted ring-4 ring-yellow-500 outline-lime-500 rounded-tr-lg border-2 outline-2 border-x-8 border-purple-500 bg-gradient-to-r bg-contain p-16">
+                <div class="text-white">01</div>
+                <div class="text-white">02</div>
+                <div class="text-white">03</div>
+        </div> -->
+
+        <!-- Shadow -->
+
+         <div class="bg-pink-600 p-16  drop-shadow-2xl shadow-green-400 shadow-2xl"></div>
+         <button class="px-4 py-2 bg-cyan-500  opacity-20 rounded-lg font-semibold text-white/90">Click me</button>
+
+            <div class="my-8"></div>
+            <div class="divide-dashed rounded-full border-2 border-pink-500 bg-gradient-to-r bg-cover p-16"></div>
+        </div>
+
+    </div>
+
+
+
+    </body>
+
+</html>

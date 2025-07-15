@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<body>
+    <!-- Animations -->
+    <!-- Transition, Transform -->
+    <!-- https://v3.tailwindcss.com/docs/transition-property -->
+
+    <div class="h-screen bg-gray-900 p-2 space-y-4 text-white/80">
+        <!-- Transition -->
+        <div
+            class="cursor-pointer rounded-lg  border border-yellow-500 bg-pink-400 p-10 transition-colors hover:bg-green-200 hover:border-blue-600">
+        </div>
+        <div
+            class="cursor-pointer rounded-lg  border border-yellow-500 bg-pink-400 p-10  opacity-0 transition-opacity hover:opacity-100">
+        </div>
+        <div class="flex justify-center">
+            <button
+                class="bg-blue-500 p-3 transition  rounded-lg delay-150 duration-300 ease-in-out hover:translate-y-1 hover:scale-110 hover:bg-indigo-500">Save
+                Changes</button>
+        </div>
+
+        <!-- Animate by transition -->
+
+        <div class="flex justify-center">
+            <h2 class="text-xl font-semibold">Tailwind</h2>
+            <div class="mx-2 size-2 animate-bounce rounded-lg bg-green-500"></div>
+        </div>
+
+        <!-- Transform -->
+
+        <!-- Scale -->
+        <div class="flex justify-center">
+            <div
+                class="mx-2 size-20 rounded-md bg-pink-500 transition-transform delay-100 duration-500 ease-in-out hover:scale-125">
+            </div>
+            <!-- Rotate -->
+            <div
+                class="mx-2 size-20 transform-cpu rounded-md bg-pink-500 transition-transform delay-100 duration-500 ease-in-out hover:rotate-17">
+            </div>
+            <!-- Translate -->
+            <div
+                class="mx-2 size-20 transform-cpu rounded-md bg-pink-500 transition-transform delay-100 duration-500 ease-in-out hover:translate-x-20 hover:translate-y-20 hover:rotate-17">
+            </div>
+            <!-- Skew -->
+            <div
+                class="mx-2 size-20 transform-cpu rounded-md bg-pink-500 transition-transform delay-100 duration-500 ease-in-out hover:rotate-17 hover:skew-y-12">
+            </div>
+            <!-- Transform Origin -->
+            <div
+                class="mx-2 size-20 origin-top-right transform-cpu rounded-md bg-pink-500 transition-transform delay-100 duration-700 ease-in-out hover:rotate-12">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

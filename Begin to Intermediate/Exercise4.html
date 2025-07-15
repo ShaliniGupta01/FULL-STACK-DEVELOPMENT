@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Table</title>
+
+    <style>
+
+    table {
+
+      border-collapse: collapse;
+
+      width: 100%;
+
+      font-family: Arial, sans-serif;
+
+    }
+
+
+    th, td {
+
+      border: 1px solid orange;
+
+      padding: 8px;
+
+      text-align: center;
+
+    }
+
+
+    th {
+
+      background-color: #666;
+
+      color: white;
+
+    }
+
+    .firm {
+
+      writing-mode: horizontal-tb;
+
+      text-orientation: mixed;
+
+
+      font-weight: bold;
+
+    }
+
+    .subtotal {
+
+      font-weight: bold;
+
+      text-align: right;
+
+    }
+
+   
+
+       
+
+    </style>
+
+</head>
+
+<body>
+
+  <table>
+
+   <tr>
+
+      <th>Firm</th>
+
+      <th>Org</th>
+
+      <th>Lab</th>
+
+      <th>Sub Lab</th>
+
+      <th>Business Plans</th>
+
+      <th>Business Components</th>
+
+    </tr>
+
+    <tr>
+
+      <td class="firm" rowspan="11">XYZ</td>
+
+      <td rowspan="5">CST</td>
+
+      <td rowspan="3">CT</td>
+
+      <td>ADS</td>
+
+      <td>1</td>
+
+      <td>10</td>
+
+    </tr>
+
+     <tr>
+
+      <td>BTO</td>
+
+      <td>2</td>
+
+      <td>15</td>
+
+    </tr>
+
+    <tr>
+
+      <td>CSI</td>
+
+      <td>3</td>
+
+      <td>6</td>
+
+    </tr>
+
+
+    <tr>
+
+        <td rowspan="2">VCT</td>
+
+      <td>ADS</td>
+
+      <td>4</td>
+
+      <td>10</td>
+
+    </tr>
+
+    <tr>
+
+    <td>BTO</td>
+
+      <td>5</td>
+
+      <td>15</td>
+
+    </tr>
+
+    <tr>
+
+      <td colspan="3" class="subtotal">Sub Total</td>
+
+      <td>6</td>
+
+      <td>15</td>
+
+    </tr>
+
+    <tr>
+
+      <td rowspan="4">CST</td>
+
+      <td rowspan="3">CT</td>
+
+      <td>ADS</td>
+
+      <td>7</td>
+
+      <td>10</td>
+
+    </tr>
+
+    <tr>
+
+      <td>BTO</td>
+
+      <td>8</td>
+
+      <td>15</td>
+
+    </tr>
+
+    <tr>
+
+      <td>CSI</td>
+
+      <td>9</td>
+
+      <td>6</td>
+
+    </tr>
+
+    <tr>
+
+      <td rowspan="1">VCT</td> 
+
+      <td>ADS</td>
+
+      <td>10</td>
+
+      <td>10</td>
+
+    </tr>
+
+    <tr>
+
+      <td colspan="3" class="subtotal">Sub Total</td>
+
+      <td>11</td>
+
+      <td>15</td>
+
+    </tr>   
+
+  </table>
+
+</body>
+
+</html>

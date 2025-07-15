@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced JS</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Event delegation -->
+    <!-- <div> -->
+        <!-- <button id="button1">Button 1</button>
+        <button id="button2">Button 2</button>
+        <button id="button3">Button 3</button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo doloremque ut modi. Quibusdam possimus facilis
+            aliquam consectetur suscipit dignissimos blanditiis nostrum, fugit quas cupiditate fuga quae assumenda error
+            deleniti. Odio?</p> -->
+
+    <!-- </div> -->
+    <!-- Event bubbling -->
+    <!-- <h2>Body</h2>
+    <div>
+        <h2>Div</h2>
+        <span>
+            <h2>Span</h2>
+            <button>Click me!</button>
+        </span>
+    </div> -->
+    <script src="./app.js"></script>
+</body>
+
+</html>
+
+<!-- HOF -->
+<!--  https://www.freecodecamp.org/news/higher-order-functions-in-javascript-examples/ -->
+
+<!-- Array -->
+
+
+<!-- Desteructuring -->
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment -->
+
+<!-- Spread_Rest Operator -->
+
+<!-- Closure -->
+<!-- https://www.w3schools.com/js/js_function_closures.asp -->
+
+<!-- Promises -->
+<!--  https://www.w3schools.com/js/js_promise.asp -->
+
+<!-- Promises methods -->
+<!--Promises are one of the key features of JavaScript's asynchronous programming model, providing a clean way to handle asynchronous operations. They allow chaining and better error handling compared to callback functions. JavaScript provides several built-in methods to handle complex Promise-based workflows.
+
+
+1. Promise.all()
+Promise.all() takes an iterable of Promises and returns a single Promise that resolves when all of the promises in the iterable have resolved or rejects if any promise rejects.
+
+Features:
+Resolves with an array of resolved values (maintains the order of the promises).
+Rejects immediately if any promise in the iterable rejects.
+Use Case:
+When you want to execute multiple asynchronous tasks concurrently and need all of them to succeed.
+
+Example:  -->
+<!-- 2. Promise.race()
+Promise.race() returns a Promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects.
+
+Features:
+The result of the first settled promise (resolved or rejected) is returned.
+Use Case:
+Useful when you need the result of the fastest promise, such as a timeout mechanism or fastest server response.
+
+Example: -->
+
+<!-- 3. Promise.allSettled()
+Promise.allSettled() takes an iterable of Promises and returns a single Promise that resolves when all of the promises in the iterable have settled (either resolved or rejected).
+
+Features:
+Does not short-circuit on rejection.
+Provides the result for each promise (resolved or rejected) in the form of an object.
+Use Case:
+When you want to know the outcome of all promises, regardless of success or failure.
+
+Example: -->
+
+<!-- 4. Promise.any()
+Promise.any() takes an iterable of Promises and returns a single Promise that resolves with the first promise that fulfills. If all promises reject, it rejects with an AggregateError.
+
+Features:
+Resolves with the value of the first successfully resolved promise.
+Rejects only if all promises are rejected.
+Use Case:
+When you need at least one successful result out of multiple promises.
+
+Example: -->
+
+<!-- 5. then()
+then() is used to attach a callback function that runs when the Promise is resolved. It can also be chained to handle the resolution of multiple asynchronous operations in sequence.
+
+Features:
+Accepts two arguments: a success handler and an optional error handler.
+Returns a new Promise, allowing chaining.
+Use Case:
+To handle the result of a resolved Promise.
+
+Example: -->
+
+<!-- 6. catch()
+catch() is used to handle errors or rejections in a Promise chain.
+
+Features:
+Catches errors from the previous then() or any rejected Promise.
+Use Case:
+To handle failures in asynchronous operations.
+
+Example: -->
+
+<!-- 7. finally()
+finally() executes a callback function once the Promise is settled, regardless of whether it was resolved or rejected.
+
+Features:
+Does not receive the Promise's result or reason.
+Useful for cleanup operations.
+Use Case:
+To execute code that should run after a Promise is settled, like hiding a loading spinner.
+
+Example:
+ -->
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise -->
+
+
+<!-- Javascript Event Loop and call stack -->
+
+<!-- JavaScript works on a single thread, so it can only do one thing at a time using one call stack. JavaScript engines (like Chrome V8) use this stack to manage what is running. The stack works like a “last in, first out” (LIFO) system, meaning the last thing added is the first to be handled.
+
+Memory Heap: This is where the variables, objects, and functions we create are stored.
+Web APIs: We said JavaScript is single-threaded, but if you wanna do a few things at once, it’s possible thanks to Web APIs provided by browsers. So, when we wanna do something async, like an API request, it’s handled in its own thread and moved to the Callback Queue. For example, if we want to log “hello” to the console after 1 second using setTimeout, first, the setTimeout() function is added to the stack. Since there's a 1-second delay, the callback function gets moved to Web APIs and setTimeout is removed from the stack. So, the stack is empty and the code isn't blocked. After 1 second, the callback function from Web APIs is added to the Callback Queue, and if the stack is empty, the Event Loop will remove this callback into the stack.
+Callback Queue: When the async task in Web APIs is done, the callback lands here.
+Event Loop: As soon as the Call Stack is empty, the Event Loop takes the first call from the Callback Queue and throws it into the stack.
+ -->
+
+<!-- In the code above, there are three functions. The first one, foo, will log "foo" to the console. The second one, bar, will log "bar" to the console. The third one, hello, calls the foo and bar functions and then logs "hello" to the console. Finally, I called the hello() function. -->
+
+<!-- function foo(){
+  console.log("foo");
+}
+function bar(){
+  console.log("bar");
+}
+function hello(){
+  foo();
+  bar();
+  console.log ("hello");
+}
+hello(); -->
+
+<!-- The code runs from top to bottom.
+
+First, the hello() function goes into the Call Stack. Inside that, the foo() function gets called, so it’s added to the stack too. The foo function needs to log "foo" to the console, so console.log is added to the stack. Since the stack works on a "last in, first out" (LIFO) basis, the console.log runs first and then gets removed. After that, foo is done, so it’s also taken off the stack.
+The hello function is still in the stack 'cause it’s not finished yet. Now, the bar function gets added to the Call Stack. It needs to log "bar" to the console, so it goes into the stack, runs, and then gets removed, just like foo.
+Finally, the hello function needs to log "hello" to the console. It gets added to the stack, runs, and then gets removed. Since the hello function has nothing left to do, it’s also removed from the stack.
+Async
+Let’s check out an example with setTimeout. -->
+
+<!-- console.log("hello");
+function world(){
+     console.log("world")
+}
+setTimeout(function cbFunction(){
+     console.log("Callback Function")
+}, 1000);
+world(); -->
+
+<!-- In the code above, the first line gets added to the Call Stack and logs “hello” to the console, then it’s removed from the stack.
+Next, we have a function named world that logs "world" to the console. This function is called after setTimeout.
+In this case, the setTimeout function is added to the stack. It checks the 1000 millisecond delay and moves the callback function, cbFunction(), to Web APIs while removing setTimeout from the stack.
+Then, the world() function and the console log are added to the Call Stack one by one, executed, and removed from the stack. During this time, 1000 millisecond pass, and cbFunction() is added to the Callback Queue.
+The Event Loop checks if the Call Stack is empty, and if it is, it adds the callback function to the stack, logs “Callback Function” to the console, and removes it from the stack. Since this function has no other tasks, it’s also removed, leaving the Call Stack empty again. -->
+
+<!-- Understanding the Order of Execution in Asynchronous Functions in the Event Loop -->
+
+<!-- The execution order of asynchronous functions in the event loop follows these steps:
+
+1. Synchronous Code Execution:
+
+All synchronous code is executed first. This includes function calls, variable assignments, and other straightforward JavaScript statements. This code runs in the call stack.
+
+2. Microtasks Execution:
+
+Once the synchronous code has finished executing, the event loop checks the microtask queue. All tasks in the microtask queue are executed before moving on to the macro task queue. This is why Promise callbacks are executed before setTimeout callbacks.
+
+Examples include:
+
+Promise callbacks (.then(), .catch(), .finally())
+MutationObserver callbacks
+process.nextTick() (Node.js only)
+3. Macro Task Execution:
+
+After the microtasks are completed, the event loop checks the macro task queue and executes the first task. Once a task from the macro task queue is executed, the event loop goes back to check the microtask queue again.
+
+Examples include:
+
+setTimeout
+setInterval
+I/O operations
+UI rendering events
+4. Repeating the Process:
+
+The event loop continues to alternate between executing tasks from the microtask queue and the macro task queue, ensuring that the microtask queue is always checked after executing any macro task.
+
+Example 1 : Combining Multiple Microtasks and Macro Tasks
+console.log('Script start');
+
+Promise.resolve().then(() => {
+    console.log('Promise 1');
+}).then(() => {
+    console.log('Promise 2');
+});
+
+console.log('Script end');
+Execution Flow:
+
+Synchronous code: The code executes console.log('Script start'), printing "Script start".
+Promise resolved: The promise is resolved immediately, and the .then() callbacks are scheduled in the microtask queue.
+Synchronous code: The code executes console.log('Script end'), printing "Script end".
+Microtasks execution:
+The first .then() callback is executed, printing "Promise 1".
+The second .then() callback is executed, printing "Promise 2".
+Final Output:
+
+Script start
+Script end
+Promise 1
+Promise 2
+Example 2: Combining Multiple Microtasks and Macro Tasks
+console.log('Start');
+
+setTimeout(() => {
+    console.log('Timeout 1');
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log('Promise 1');
+}).then(() => {
+    console.log('Promise 2');
+});
+
+setTimeout(() => {
+    console.log('Timeout 2');
+}, 0);
+
+console.log('End');
+Execution Flow:
+
+Synchronous code: “Start” is logged first.
+First setTimeout: The first setTimeout callback is scheduled in the macro task queue.
+Promise resolved: The promise is resolved, and its .then() callbacks are scheduled in the microtask queue.
+Second setTimeout: The second setTimeout callback is scheduled in the macro task queue.
+Synchronous code: “End” is logged.
+Microtasks executed:
+“Promise 1” is logged.
+“Promise 2” is logged.
+7. Macro tasks executed:
+
+“Timeout 1” is logged.
+“Timeout 2” is logged.
+Final Output:
+
+Start
+End
+Promise 1
+Promise 2
+Timeout 1
+Timeout 2
+Example 3 : Microtasks Inside Macro Tasks
+console.log('Start');
+
+setTimeout(() => {
+    console.log('Timeout 1');
+    Promise.resolve().then(() => {
+        console.log('Promise inside Timeout 1');
+    });
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log('Promise 1');
+});
+
+console.log('End');
+Execution Flow:
+
+Synchronous code: “Start” is logged.
+First setTimeout: The setTimeout callback is scheduled in the macro task queue.
+Promise resolved: The promise is resolved, and its .then() callback is scheduled in the microtask queue.
+Synchronous code: “End” is logged.
+Microtasks executed:
+“Promise 1” is logged.
+6. Macro tasks executed:
+
+“Timeout 1” is logged.
+New microtask added: The promise inside the setTimeout callback schedules a new microtask.
+New microtask executed: “Promise inside Timeout 1” is logged.
+Final Output:
+
+Start
+End
+Promise 1
+Timeout 1
+Promise inside Timeout 1
+These examples demonstrate how the event loop handles different combinations of microtasks and macro tasks. 
+
+ -->
+
+<!-- Event Bubbling -->
+<!-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Event_bubbling -->
+
+<!-- Event Delegation -->
+
+<!-- https://javascript.info/event-delegation  -->
+
+<!-- Debouncing & Throttling -->
+
+<!-- In the web development, optimizing performance and enhancing user experience are paramount. Two key techniques in the arsenal of a JavaScript developer for controlling the rate at which a function is executed are debouncing and throttling. Despite their importance, these concepts are often misunderstood or interchangeably used. In this documentation, we’ll dive deep into what debouncing and throttling are, their differences, use cases, and how to implement them with code examples.
+
+Understanding Debouncing
+Debouncing is a programming practice used to ensure that time-consuming tasks do not fire so often, which can cause performance issues. In essence, it limits the execution of a function until a certain amount of idle time has passed without it being triggered again.
+
+Use Case: Search Input Field
+Consider a search input field that fetches suggestions from a server as the user types. Without debouncing, every keystroke would send a request, potentially leading to hundreds of requests per minute. Debouncing allows us to delay the function call until the user has stopped typing for a predefined time.
+
+Code Example:
+function debounce(func, delay) {
+  let debounceTimer;
+  return function() {
+    const context = this;
+    const args = arguments;
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => func.apply(context, args), delay);
+  };
+}
+// Usage
+const fetchSuggestions = debounce(() => {
+  // Fetch suggestions from the server
+}, 250);
+Understanding Throttling
+Throttling, on the other hand, ensures that a function is executed at most once every specified period. This is particularly useful for managing events that occur more frequently than you need to handle them.
+
+Use Case: Scroll Event Listener
+An example use case is attaching a listener to the scroll event of a webpage. Since the scroll event can fire dozens of times per second, throttling can be used to limit the number of times your callback function executes, improving performance.
+
+Code Example:
+function throttle(func, limit) {
+  let inThrottle;
+  return function() {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
+}
+// Usage
+window.addEventListener('scroll', throttle(() => {
+  // Handle the scroll event
+}, 1000));
+Debouncing vs Throttling: Key Differences
+Execution Frequency: Debouncing postpones the execution until after a period of inactivity, while throttling limits the execution to a fixed number of times over an interval.
+Use Cases: Debouncing is ideal for tasks that don’t need to execute repeatedly in quick succession, such as API calls based on user input. Throttling is suited for controlling the execution rate of functions called in response to events like scrolling or resizing.
+Implementing Debouncing and Throttling in JavaScript
+Both techniques can be implemented using vanilla JavaScript, as shown in the examples above. Additionally, libraries such as Lodash offer _.debounce and _.throttle functions, providing a more robust and cross-browser compatible solution.
+
+Conclusion
+Debouncing and throttling are powerful techniques for optimizing JavaScript applications, preventing unnecessary code executions, and improving user experience. By understanding their differences and use cases, developers can choose the right approach for their specific needs.
+
+Incorporating these practices into your development workflow can significantly enhance the performance and responsiveness of your web applications, making them more enjoyable for users.
+
+
+Complete & continue
+ -->
+
+ <!--Memory Management and Garbage Collection in JavaScript -->
+
+ <!-- What is Memory Management?
+Memory management involves:
+
+Allocation: Reserving memory for variables, objects, and functions.
+Usage: Utilizing the allocated memory to store data.
+Deallocation: Releasing memory when it is no longer needed to free resources.
+In JavaScript, memory management is largely automated, thanks to features like automatic memory allocation and garbage collection.
+
+
+
+Components of Memory Management
+1. Memory Life Cycle
+The memory life cycle in JavaScript follows these steps:
+
+Allocate memory when variables or objects are created.
+Use the allocated memory to perform operations.
+Release memory when it is no longer needed.
+2. Memory Allocation
+JavaScript automatically allocates memory when:
+
+Variables are declared.
+Functions or objects are created.
+Example: Automatic Allocation
+
+What is Garbage Collection?
+Garbage collection (GC) is the process by which JavaScript identifies and reclaims memory that is no longer in use. The main goal is to prevent memory leaks by ensuring that unused memory is freed.
+
+JavaScript engines like V8 (used in Chrome and Node.js) and SpiderMonkey (used in Firefox) perform garbage collection using strategies like mark-and-sweep.
+
+
+How Garbage Collection Works in JavaScript
+1. Reachability
+JavaScript determines if an object is "reachable." An object is reachable if:
+
+It is referenced directly or indirectly by the root object (window in browsers, global in Node.js).
+It is part of the call stack (e.g., local variables in functions).
+It is part of the heap memory but can still be accessed.
+Objects that are no longer reachable are considered garbage.
+
+Example: Reachability
+
+
+2. Mark-and-Sweep Algorithm
+The mark-and-sweep algorithm is the most common garbage collection method in JavaScript.
+
+Steps:
+Mark Phase: The GC starts from the root and marks all objects that are reachable.
+Sweep Phase: Unmarked objects (unreachable) are swept away and their memory is reclaimed.
+Example: Mark-and-Sweep
+
+Types of Memory in JavaScript
+1. Heap
+Used for storing objects and dynamic data.
+Memory in the heap is managed through garbage collection.
+Example:
+
+2. Stack
+Used for storing function calls and primitive variables.
+Memory in the stack is automatically freed after the function exits.
+Example:
+
+Memory Leaks in JavaScript
+Memory leaks occur when memory that is no longer needed is not released, leading to inefficient resource utilization. Common causes include:
+
+1. Global Variables
+Variables declared globally persist throughout the program's lifecycle.
+
+Example:
+
+2. Uncleared Timers
+Timers (setTimeout, setInterval) that are not cleared can retain references.
+
+Example:
+
+3. Detached DOM Nodes
+References to DOM nodes that are no longer in the document tree can cause memory leaks.
+
+Example:
+
+Best Practices for Efficient Memory Management
+1. Avoid Global Variables
+Use block-scoped variables (let, const) to limit variable scope.
+
+2. Clear Timers and Event Listeners
+Always remove timers and event listeners when they are no longer needed.
+
+Example:
+
+3. Minimize Closures
+Be cautious with closures that retain unnecessary references.
+
+Example:
+
+4. Profile and Monitor Memory Usage
+Use developer tools to monitor memory usage and identify leaks:
+
+Chrome: Performance and Memory tabs.
+Firefox: Performance and Heap Snapshot.
+Example: Identifying and Fixing Memory Leaks
+Problematic Code:
+
+Fixed Code:
+
+
+Further Reading Resources
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_management
+https://www.geeksforgeeks.org/garbage-collection-in-javascript/ -->
+
+<!-- JavaScript Module Systems: CommonJS vs. ES6 Modules -->
+
+<!-- JavaScript has evolved from a browser-only language to a versatile tool for both client-side and server-side development. One of the key improvements is the introduction of module systems that allow developers to organize and reuse code efficiently. This documentation explores CommonJS and ES6 modules, their differences, and their usage in modern development.
+
+
+What is a Module System?
+A module system allows developers to break their code into smaller, reusable pieces called modules. Each module can:
+
+Export specific pieces of functionality.
+Import functionality from other modules.
+This improves code maintainability, reusability, and scalability.
+
+
+CommonJS Module System
+CommonJS was designed for server-side JavaScript (primarily Node.js). It became the standard module system in Node.js before the advent of ES6 modules.
+
+Features:
+Synchronous Loading
+
+Modules are loaded synchronously, meaning the execution waits until the module is fully loaded.
+This is ideal for server-side environments but not for the browser.
+Exports and Require
+
+Uses module.exports or exports to expose functionality.
+Uses require() to import functionality.
+Single-Export Default
+
+A module can export a single object, function, or value as its default export.
+
+Syntax and Example
+Creating a Module:
+
+Importing a Module:
+
+
+Common Use Cases
+Server-side development with Node.js.
+Legacy JavaScript applications.
+
+ES6 Module System
+ES6 (ECMAScript 2015) introduced a standardized module system for JavaScript. It is natively supported by modern browsers and tools like Webpack and Rollup.
+
+Features:
+Asynchronous Loading
+
+Modules are loaded asynchronously in browsers, ensuring non-blocking behavior.
+Explicit Syntax
+
+Uses export and import keywords for defining and accessing modules.
+Supports both named exports and default exports.
+Static Analysis
+
+Enables better optimization by tools like tree-shaking because imports and exports are statically analyzable.
+Native Support
+
+No need for external tools to load ES6 modules in modern browsers.
+
+Syntax and Example
+Creating a Module:
+
+Importing a Module:
+
+Common Use Cases
+Modern client-side JavaScript applications.
+Bundlers like Webpack, Rollup, or Parcel for optimizing imports and exports.
+Differences Between CommonJS and ES6 Modules:
+Feature	CommonJS	ES6 Modules
+Syntax	require/module.exports	import/export
+Execution	Synchronous	Asynchronous
+Environment	Node.js	Browsers and Node.js
+Static Analysis	Not statically analyzable	Statically analyzable
+Default Exports	Single object/function	Named and default exports
+Scope	Module-scoped variables	Block-scoped variables
+
+Compatibility and Usage in Modern Development:
+Browsers
+ES6 Modules are natively supported in most modern browsers.
+CommonJS is not supported in browsers without a bundler like Webpack or Parcel.
+Node.js
+Node.js natively supports CommonJS.
+ES6 modules are supported using .mjs files or by setting "type": "module" in the package.json.
+Example: Using ES6 Modules in Node.js
+
+
+Transitioning from CommonJS to ES6 Modules
+Many projects are migrating from CommonJS to ES6 modules for their modern features. However, it’s important to handle compatibility carefully.
+
+Example: Interoperability
+
+
+Advantages of ES6 Modules Over CommonJS
+Better Performance: Asynchronous loading ensures non-blocking behavior in browsers.
+Static Analysis: Tools can optimize ES6 modules better due to predictable imports and exports.
+Standardization: Works across all modern JavaScript environments.
+Simpler Syntax: Explicit import and export make the code easier to understand and maintain.
+
+When to Use CommonJS vs. ES6 Modules
+Use Case	Recommended Module System
+Legacy Node.js Projects	CommonJS
+Modern Node.js and Browser Development	ES6 Modules
+Cross-Environment Code with Compatibility	Consider a bundler to handle both
+ -->
+
+ <!-- Client-Side Storage with JavaScript -->
+
+ <!-- Whenever we open a website, create an account, log in, or interact with a website we’re generating some data. While creating an account with the website it will store that data in the server, so that when we try to log in it will validate the authentication.
+
+Why do we have client-side storage?
+Client-side storage allows web applications to store data locally in the user’s browser, providing a way to save and retrieve information without relying solely on server-side databases.
+
+In this documentation, we are going to talk about types of Client-Side storage in javascript. As a web developer, it’s important to understand how local storage works and have a basic idea about it.
+
+There are several client-side storage options available in JavaScript. Here are a few commonly used ones:
+Cookies
+Cookies store data in key-value pairs and have an expiration date. They are primarily used to maintain the state and track user activity. They allow websites to remember information about the user across different pages or visits. For example, cookies can be used to store login credentials, remember language preferences, or track items in a shopping cart.
+
+Types of Cookies:
+Session cookies: These cookies are temporary and are stored only for the duration of the user’s session. They are typically used to maintain the user state while navigating a website. Once the user closes the browser, session cookies are deleted.
+
+Persistent cookies: Persistent cookies have an expiration date and remain on the user’s browser even after the session ends. They are used for long-term tracking and storing user preferences.
+
+Cookies can store sensitive information, so it’s important to use secure protocols (such as HTTPS) to transmit cookies between the browser and the server.
+
+How to access cookies using JavaScript?
+JavaScript provides the document.cookie object for reading, creating, and modifying cookies. The document.cookie object allows us to set the value, expiration date, and other attributes of a cookie.
+
+Do cookies have limitations?
+Cookies are stored in plain text so it’s not secure and sensitive information should not be stored in cookies.
+
+The cookies' size is decided by the browser generally It is 4096(4kb). Each browser will have a different size limit, and also each browser will have a different location to store cookies.
+
+There will be a limitation on the number of cookies stored for a domain. Once it reaches the limit old one will be replaced by new one.
+
+There are two types of Web Storage localStorage and sessionStorage.
+
+Web Storage (LocalStorage and SessionStorage)
+Web Storage is a client-side storage mechanism provided by modern web browsers, consisting of two objects: localStorage and sessionStorage. They allow us to store key-value pairs of data in the browser, providing a convenient way to save and retrieve information without relying on server-side databases.
+
+Web Storage has more storage capacity in comparison to cookies. Web Storage among the major browsers is 5MB or more than that.
+
+We can access web storage as followed Window.sessionStorage and Window.localStorage. invoking one of these will create an instance of the Storage object, through which data items can be set, retrieved, and removed.
+
+API Usage: The Web Storage API provides a simple and consistent API for working with localStorage and sessionStorage. The API includes methods such as setItem(), getItem(), removeItem(), and clear(), which allows us to store, retrieve, remove, and clear data.
+
+Web Storage can store data as strings. To store complex data types like objects or arrays, we need to serialize them into a string format (e.g., using JSON.stringify()) before storing, and deserializing them (e.g., using JSON.parse()) after retrieval.
+
+const numberData = [2, 4, 23, 56, 98] 
+const inJSON = JSON.stringify(numberData) 
+localStorage.setItem('Number', inJSON) 
+localStorage // output >> {Number: '[2, 4, 23, 56, 98]', length: 1}
+What is the major difference between LocalStorage and SessionStorage?
+localStorage:
+The localStorage object provides persistent storage that remains even after the browser is closed and reopened. Data stored in localStorage is available across multiple browser sessions, making it suitable for long-term storage. The stored data persists until explicitly cleared by the user or removed programmatically.
+
+sessionStorage:
+The sessionStorage object provides storage that is tied to a specific browser session. Data stored in sessionStorage is available only within the current session. When the browser is closed, the data is cleared and no longer accessible. sessionStorage is useful for storing temporary data that should be available during a specific browsing session.
+
+IndexedDB
+First, ting first uses indexedDB only if we need complex local storage. IndexedDB is a NoSQL (non-relational) database, meaning it does not use traditional tables, rows, and columns. Instead, it stores data in collections known as object stores. Each object store contains JavaScript objects, and these objects can have different properties and structures.
+
+Unlike web storage which stores data in string format, indexedDB can store data in all types, like string, JSON, Blob files, etc.
+
+One major advantage of indexedDB is that it supports transactions. we can perform database operations (such as reading, writing, or deleting data) within a transaction. Transactions can be read-only or read-write, and they provide atomicity and isolation for data modifications.
+
+IndexedDB uses Index for storing data which makes it easy to search data. While adding an index keep in mind that the index will increase the space, So use it carefully.
+
+Reference:
+https://www.freecodecamp.org/news/how-web-storage-works/ -->
+
+<!-- Javascript Project -->
+ <!--  http://gitHub.com/ishar19/jsvid.git -->

@@ -1,0 +1,33 @@
+body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f7f7f7;
+    }
+    input {
+      padding: 8px;
+      margin: 5px;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: #1193d3;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    table {
+      margin-top: 20px;
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid black;
+      text-align: left;
+    }
+    th {
+      background-color: #ddd;
+    }
+    .total {
+      font-weight: bold;
+      text-align: right;
+    }

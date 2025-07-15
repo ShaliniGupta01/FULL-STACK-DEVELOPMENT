@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Star using Box Model</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+        .star {
+              position:absolute;
+              top:0;
+              width: 0;
+              height: 0;
+              border-left: 50px solid transparent;
+              border-right: 50px solid transparent;
+              border-bottom: 100px solid yellow;
+ 
+              }
+        
+        
+        .star::after {
+              content: "";
+              position: absolute;
+              top: 30px;
+              left: -50px;
+                 }
+        .star::after {
+               width: 0;
+               height: 0;
+               border-left: 50px solid transparent;
+               border-right: 50px solid transparent;
+               border-bottom: 100px solid yellow;
+               transform: rotate(180deg);
+                 }
+
+
+    </style>
+
+</head>
+
+<body>
+
+   <div class="star"></div>
+    
+</body>
+
+</html>
